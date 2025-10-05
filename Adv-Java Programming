@@ -1,0 +1,468 @@
+WHY ADVANCED JAVA(J2EE):-
+-----------------------
+-->To Develop Web Enabled Applications(Online Projects).
+-->Advanced Java is Server-side Programming.
+-->It is Most Popular Programming language for Client-server Web Applications.
+
+PREREQUISITIES:-
+----------------
+-->JDK INSTALLATION
+-->ECPLISE ENTERPROSE EDITION FOR WEB DEVELOPERS
+-->TOMCAT SERVER
+-->JAVA API
+-->SERVLET API
+
+WHAT IS WEBSITE..?
+-------------------
+-->A Collection of Web Pages that mostly belong to a single Organization is called as Website.
+EX:https://www.facebook.com/
+
+WHAT IS WEBPAGE..?
+------------------
+-->A fundamental unit of Information that can be sent from the website to the End user is Nothing but a Web page.
+-->A webpage is transported from the web server to the browser using http.
+
+What is Web Server..?
+----------------------
+-->A Web Server is a Server Software that provides "Web Resources" to "Web Clients".
+
+what are the Limitations of Web Server..?
+------------------------------------------
+-->It can't Communicate with the data base. -->Who..? ->JDBC
+-->It can't Process the data. --> Who..? --> Servlets
+-->It can't Produce the Response Page. -->who..? -->JSP
+
+what is API..?
+---------------
+-->Collection of "Classes" and "Interfaces" together inside a package is called as API.
+==================================================================================================================================================================
+
+Servlets API:-
+===============
+why we are going for Servlets...?
+----------------------------------
+-->There are some Limitations on Server, So We are going to create a server side programming to overcome server challenges.
+
+What are not Servlets..?
+-------------------------
+-->It is not a Programming Language.
+-->It is not a Software to be intstalled in our computers.
+
+what are Servlets..?
+--------------------
+-->Servlets is a Java Based Web Technology from Sun Microsystems.
+-->It is an API.
+-->Servlets is a Specification for Web Container Manufacturers.
+-->It is J2EE Technology.
+
+What is the Purpose of Servlets..?
+-----------------------------------
+-->Web enabled enterprise Java Application Development is the Main Purpose of servlet Technology.
+
+what is Servlet..?(Controller)
+------------------------------
+-->A Servlet is a Web server side Programming piece of Code that enhances the functionality of the Web server.
+-->Servlet is an Interface.
+-->It is a dynamic Web resource.
+-->It is a web component.
+-->Servlet itself is an Thread.
+-->A Servlet in a web Application is a singleton.
+-->Generic Servlet is a implemented abstract class of servlet interface which is having an abstract method "Service()".
+-->HTTP Servlet is a child class of Generic Servlet.
+
+What is the Content of a Servlet..?
+-----------------------------------
+-->A servlet = Java Code + HTML Code
+
+what is a Web Container..?
+--------------------------
+-->A web Container is a server software written in java according to Servlets and JSPs.
+
+Servlet Life Cycle:-
+--------------------
+-->We have 4 phases in servlet life cycle they are:
+      1)Instantiation
+      2)Initialization
+      3)Service
+      4)Destroy
+-->Life cycle methods are: init(), service(), destroy()
+-->Whenever something happens in a life of servlet, Servlet Engine will call the above methods internally.
+
+-->Before Going to Instatiation phase, Servlet class will be loaded in to the Servlet Engine.
+1)Instantiation :- Creating an Object of user defined servlet class is the concept of Instantiation which is created by the servlet Container.
+
+why we need to create userDefined Servlet class..?
+-----------------------------------------------------
+-->In Core Java(J2SE) there is no client -- Server Interaction, whereas in J2EE there is a Client-server Interaction.
+-->The userDefined servlet class will interact with the Server and take the Request.
+    -->Processing the Request.
+    -->Communicating with the data base.
+    -->Produce the response Page.
+    -->Giving Response to the Server.
+-->The Servlet is going to provide capability of Interaction of user defined servlet with the Server.
+
+2)Initialization :- SE(Servlet Engine) creates a ServletConfig Object to store context information and Initial configuration information.
+ --> SE calls "init(ServletConfig obj)" by supplying servlet config object reference as Argument.(init method is called only once in the life time of a servlet.)
+
+3)Service :- SE creates a ServletResponse and ServletRequest Objects --> SE calls a "Service(ServletResponse response, ServletRequest request)".
+ -->"request Object" captures the user input and the "response Object" produce display page to the client.
+  
+4)Destroy :-  Is the Servlet is Unloaded then SE calls the "Destroy()" on the Servlet Instance.
+
+"Web.xml" file is used for configuration purpose which consist of "welcome file-list" ,"servlet" and "servlet mapping".
+
+Difference between ServletConfg and ServletContext:-
+-----------------------------------------------------
+-->ServletConfig and ServletContext both are Objects created at the time of servlet Initialization and used to provide some initial configuration
+ information to the Servlet, but difference lies in the fact that information shared by ServletConfig is for a Specific servlet, while information
+ shared by ServletContext is available for all Servlets in the Web Application.
+==================================================================================================================================================================
+
+JDBC(Java Data Base Connectivity):-
+===================================
+what is not JDBC..?
+--------------------
+-->It is not a programming language like java.
+-->It is not a software product to be installed into a computer system. 
+-->It is not an Abbreviation for Java Data Base Connectivity.
+
+what is JDBC..?
+----------------
+-->JDBC is a Java Based Data Access Technology from sun micro systems.
+-->As a Part of JDBC, the sun micro system released two documents:
+   1)API
+   2)Specification
+-->JDBC API is for java Developers.
+-->JDBC Specification is for JDBC Driver Manufacturers.
+
+what is the purpose of JDBC..?
+--------------------------------
+-->To Enable any kind of java programs to perform CRUD Operations with any DBMS in a standard Manner.
+    C = Creation of table
+    R = Retrieval
+    U = Updating
+    D = Deletion
+
+EXPLAIN ABOUT JDBC ARCHITECTURE:-
+----------------------------------
+-->JDBC Architecture is a Client Server Architecture.
+-->There are 5 elements in this Architecture, they are:-
+   1)JDBC Client -->Servlet 
+   2)JDBC API  --> Collection of Interfaces and classes of Java.SQl Package.
+   3)Driver Manager --> class that Provides Connection for JDBC Clients.
+   4)JDBC Driver -->class -->MySQL Driver
+   5)Database Server
+
+What is JDBC Client..?
+------------------------
+-->Any Java Program that Communicates with a Database Server Performing CRUD Operations by using JDBC as a Data Access Technology is Known as JDBC Client.
+-->Example: Servlet Programming.
+
+What is JDBC API..?
+---------------------
+-->A Collection of Interfaces and Classes of "Java.Sql" package using which JDBC Clients Performs CRUD Operations with DBMS is nothing but JDBC API.
+
+Explain about Driver Manager...?
+--------------------------------
+-->Driver Manager is a Connection Provider to the JDBC Clients.
+-->It is not a Connection Creator.
+-->Driver Manager has no role in CRUD Operations.
+
+Explain About JDBC Driver...?
+-------------------------------
+-->JDBC Driver is a Software Component that enables Java Applications to interact with the database.
+-->There are 4 types of Drivers they are:-
+   1)JDBC-ODBC Bridge Driver
+   2)Native API Driver(Partially Java Driver)
+   3)Network Protocol Driver(Fully Java Driver)
+   4)Thin Driver(Fully Java Driver)
+
+1)JDBC-ODBC Bridge Driver:-
+ ---------------------------
+ -->The JDBC-ODBC Bridge Driver uses ODBC Driver to Connect to the Database.
+ -->The JDBC-ODBC Bridge Driver converts JDBC Method calls in to ODBC Function Calls.
+
+2)Native API Driver(Partially java driver):-
+---------------------------------------------
+--->The Native API Driver uses Client side libraries of the database.
+--->The Native API Driver converts JDBC Methods calls into Native Calls of the Database API. It is not fully Written in Java.
+
+3)Network Protocol Driver(Fully Java Driver):-
+----------------------------------------------
+-->The Network Protocol Driver Converts JDBC Methods calls directly or indirectly in to vendor-specific Database Protocol.
+-->It is fully Written in java.
+
+4)Thin Driver(Fully Java Driver):-
+----------------------------------
+ -->The Thin Driver Converts JDBC Method calls Directly in to Vendor-specific Database Protocol. It is fully Written in java.
+
+
+Steps for DAO:-
+---------------
+1)Loading the Driver
+  (Class.forName("com.mysql.cj.jdbc.Driver"); -->Class is from Java.lang , forName is a Static Method from Class
+            |
+            |
+2)Connection Establishment
+  (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/batch51" ,"root","root");
+            |
+            |
+3)Statement Preparation
+  (PreparedStatement ps = con.PrepareStatement("--------------------"); //To Avoid SqlInjection
+  (statement st = con.executeUpdate());
+            |
+            |
+4)ExecuteQuery or ExecuteUpdate
+   (int n = ps.ExecuteUpdate(); or ResultSet rs = ps.ExecuteQuery())
+
+==================================================================================================================================================================
+REQUESTDISPATCHER IN SERVLET:-
+-------------------------------
+-->"RequestDispatcher" is an Interface , which can dispatch requests to another resource(such as HTML, JSP, Image, etc) on the server.
+--->RequestDispatcher Interface provides two important methods they are:
+    1)"void forward(ServletRequest request, ServletResponse response)"  -->forward a request from a servlet to another resource on the server.
+    2)"void include(ServletRequest request, ServletResponse response)"  -->include the content of a resource in the response.
+How to get RequestDispatecher Object:-
+   RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+   rd.forward(request,resource);
+   rd.include(request, resource);
+==================================================================================================================================================================
+JSP Introduction:-
+==================
+What is JSP..?
+--------------
+-->JSP stands for Java Server pages.
+-->JSP is a Java based web Technology used to implement Java based Dynamic Website.
+-->JSP can contain both java code and HTML code.
+
+
+what are the similarities between servlets and JSPs..?-
+-----------------------------------------------------
+-->Both are user Defined.
+-->Both are Dynamic Web Resources.
+-->Both are Web Components
+-->Both contribute to making the Website interactive.
+
+what is JSP Container or Engine..?
+-----------------------------------
+-->JSP Container or Engine is a specialized software Written in java According to JSP Specification.
+-->As a Part of JSP Technology, the sun microsystem released to two documents they are:
+   1)JSP API
+   2)JSP Specification.
+
+Explain About JSP Life Cycle:-
+---------------------------------
+-->we have six phases in JSP life cycle they are:
+    1)Translation Phase
+    2)Compilation Phase
+    3)Instantiation Phase
+    4)Initialization Phase
+    5)Servicing Phase
+    6)Destroy Phase
+-->Life Cycle Methods are:
+     ->jspInit(), jspService(), jspDestroy()
+
+  1)Translation Phase:-
+  ----------------------
+  -->JSP Engine or Container converts jsp in to servlet during Translation Phase , and this servlet is called as Page Implementation class.
+
+  2)Compilation Phase:-
+  ----------------------
+   -->JSP Engine Compiling the page implementation class to the ".class" file is nothing but the Compilation Phase of JSP.
+
+ 3)Instantiation Phase:-
+ ------------------------
+  -->Container Creating an Instance of Page Implementation class is nothing but the Instantiation Phase.
+
+ 4)Initialization Phase:-
+ -------------------------
+  -->Container Calling of jspInit() method is Nothing but Initialization Phase.
+  -->Instantiation and Initialization phases will be called only once in the life time of JSP.
+
+ 5)Servicing Phase:-
+ --------------------
+  -->Container Calling of jspService() method is nothing but Servicing Phase of a JSP.
+
+ 6)Destroy Phase:-
+  ----------------
+  -->When JSP is Unloaded , container marks the page implementation class Object for Garbage Collection and calls jspDestroy() method.
+
+
+Explain JSP Elements:-
+=======================
+-->There are three types of JSP Elements.
+   1)Scripting Elements.
+   2)Directives
+   3)Actions(Tags)
+
+1)JSP Scripting Elements:-
+----------------------
+-->Scripting elements are those JSP elements using Which "Java code" is directly embedded into JSP.
+-->There are 3 Scripting elements:
+   1)Declaration
+   2)Expression
+   3)Scriptlet
+
+   1)Declaration:-
+   --------------
+    -->It starts with "<%!" and ends with "%>".
+    -->class scoped variables and methods are declared using JSP Declaration in a JSP.
+    Example:-
+        <%! int a; %>
+        <%! void m1() %>
+
+   2)Expression:-
+   ----------------
+   -->It starts with "<%=" and ends with "%>".
+   -->Only one java expression is allowed in a JSP Expression.
+   Example:-
+      <%= a+b %>
+
+   3)Scriptlet:-
+   --------------
+   -->JSP Scriptlet is meant for embedding java code directly into the JSP.
+   -->It starts with "<%" and ends with "%>".
+
+2)JSP Directives:-
+-------------------
+-->Translation Time Instruction to the JSP Engine is nothing but a JSP Directive.
+-->There are 3 types of JSP Directives, they are:-
+   1)Include Directive
+   2)Page Directive
+   3)taglib Directive
+
+  1)Include Directive:-
+  ----------------------
+  -->Include Directive is used to include other page content into the current page Inline.
+  -->Syntax:-
+          <% @include file="include file name" %>
+      
+   2)Page Directive:-
+   ------------------
+    -->Page Directive specifies the structure of the page implementation class to the JSP Container.
+    -->page Directive Attributes are:
+          1)import -->used to import java packages in to JSP.(<% @page import="java.util.*"%>)
+          2)errorPage
+          3)isErrorPage
+          4)extends
+          5)isELIgnored
+          6)Language
+          7)contentType
+          8)session
+          9)info
+          10)pageEncoding
+
+   3)taglib Directive:-
+   ---------------------
+   -->JSP custom tags must be explicitly imported in to a JSP in order to use them. JSP taglib Directive is used for that purpose.
+   -->taglib directive has the following syntax:-
+        <% @tagib prefix="alias name of the custom tag" uri="actual name of the custom tag" %>
+
+3)JSP Action tags:-
+---------------------
+-->Request Processing Time(runtime) instruction to the JSP Engine is nothing but a JSP Action tags.
+-->There are Two types of Action tags they are:
+   1)Standard Tags
+   2)Custom Tags
+
+ 1)Standard Tags:-
+ -----------------
+ -->Pre-defined tags shipped with the Container and Whose Meaning is already known to the JSP engine are standard tags.
+ -->Every Standard tag has following syntax:
+    <JSP:tagname attribute='value' attribute='value'></JSP:tagname>
+ -->Following are some of the Standard tags:
+     ->include
+     ->forward
+     ->useBean
+     ->param
+     ->setProperty
+     ->getProperty
+
+ 2)Custom tags:-
+ ---------------
+  -->JSP Custom tags must be explicitly imported in to a jsp in order to use them.
+
+JSP IMPLICIT OBJECTS:- Syntax and Examples
+-------------------------------------------
+-->Web Containers creates these Implicit Objects when they translate JSP pages to Servlets.
+-->They are available to All JSP Pages.
+-->They are Written in Scriptlet tags except Declaration.
+-->They get called Directly and need not to be declared.
+-->There are 9 implicit jsp Objects they are:
+   1)out
+   2)request
+   3)response
+   4)config
+   5)session
+   6)application
+   7)page
+   8)pageContext
+   9)Exception
+  
+
+1)"out" implicit Object:-
+--------------------------
+-->It is an in-built object of java.servlet.jsp.JspWriter;
+-->It is used to add data into buffer which will be sent to the client as output.
+-->print(),println(),flush(),clear(),buffer(),isAutoFlush(),getBufferSize(),getRemaining().
+
+2)"request" implicit object:-
+------------------------------
+-->It is an In-built Object of javax.servlet.http.HttpServlet;
+-->It passes to service Method as parameter to capture user input.
+-->getParameter(), getParamaterNames(), getParameterValues(String name), getAttribute(String name), getAttributeNames(),setAttribute(String , Object).
+
+3)"response" implicit Object:-
+-------------------------------
+-->It is an In-built Object from javax.servlet.http.HttpServletResponse;
+-->It is also passes to service method as parameter to produce display page to client.
+-->setContentType(String text), getWriter(),sendRedirect(String address), addHeader(String name, string value) setHeader(String name, String value).
+
+4)"config" implicit Object:-
+-----------------------------
+-->It is an In-built Object of javax.servlet.ServletConfig;
+-->It is used to get the information regarding configuration of JSP pages.
+-->getInitParameter(String name), getInitParameterNames(), getServletName().
+
+5)"session" implicit Object:-
+-----------------------------
+-->It is an In-built Object of javax.servlet.http.HttpSession;
+-->It is used to get the session information as it tracks sessions  between the clients.
+-->setAttribute(String , Object), getAttribute(String name);
+
+6)"Application" implicit Object:-
+---------------------------------
+-->It is an In-built Object of javax.servlet.ServletContext.
+-->This Object is Created by the Web Container only when an Application is deployed.
+-->getAttribute(String AttributeName), setAttribute(String AttributeName, Object obj), removeAttribute(String attributName), getRealPath(String value).
+
+7)"page" implicit Object:-
+-----------------------------
+-->It is an In-built Object from java.lang.Object class.
+-->It is used to provide reference to the servlet class generated.
+Ex:-
+    <% this.log("message");%>
+
+8)"pageContext" implicit Object:-
+----------------------------------
+-->It is an In-built Object from javax.servlet.jsp.PageContext.
+
+Real Time Application:-
+-----------------------
+Student Course Registration Portal
+
+How to add Project in to github..?
+-----------------------------------
+-->Open powershell
+-->git --version(if not install, do it)
+-->cd "path of workspace"
+-->git init
+-->git add .
+-->git commit -m "Initial commit"
+-->git --config global user.email "email@gmail.com"
+-->git remote add origin "repository url"
+-->git push origin main
+==================================================================================================================================================================
+
+
+
